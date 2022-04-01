@@ -70,6 +70,7 @@ public class CityController {
 	@GetMapping(path="edit")
 	public String modifierUneVille(Model model,@RequestParam("id") City laVille) {
 		model.addAttribute("city", laVille);
+		model.addAttribute("countries", countryDao.findAll());
 		return DEFAULT_VIEW;
 	}
 
